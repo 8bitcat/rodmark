@@ -4,6 +4,8 @@ Raketen har kraschat på en främmande skogsplanet med röd jord, sjöar och luf
 bygg ugnar, borrar, band och gripare, och bygg fabriken som tar dig hemåt. Spela själv eller 1–4 i hemnätet.
 
 ## Ladda ner
+**Enklast: https://8bitcat.github.io/rodmark** (knappen hämtar alltid senaste versionen).
+
 Gå till **Releases** (högerspalten), ladda ner `RODMARK-<version>-win64.zip`, packa upp mappen var som helst
 och starta `RODMARK.bat`. Spelet kollar efter uppdateringar vid varje start och hämtar bara de filer som ändrats.
 Versionen står bredvid namnet i huvudmenyn.

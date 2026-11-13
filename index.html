@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RÖDMARK – ladda ner</title>
+<meta name="description" content="RÖDMARK: bygg en fabrik på en främmande skogsplanet. Ladda ner spelet till Windows och spela själv eller ihop i hemnätet.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #15110f;
+  --panel: #211a17;
+  --panel2: #2b221e;
+  --line: #3a2e28;
+  --text: #f3e9e2;
+  --dim: #b9a79c;
+  --oxide: #f08a4b;
+  --oxide-deep: #b5441c;
+  --ok: #7fcf8f;
+  --display: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --body: "Barlow", "Segoe UI", system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--body); font-size: 17px; line-height: 1.55; }
+a { color: var(--oxide); }
+img { max-width: 100%; height: auto; display: block; }
+
+.hero { position: relative; min-height: 88vh; display: grid; align-items: end; overflow: hidden; }
+.hero::before { content: ""; position: absolute; inset: 0; background: url("bilder/kvall.jpg") center 60% / cover no-repeat; }
+.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(21,17,15,0.15) 0%, rgba(21,17,15,0.35) 45%, var(--bg) 100%); }
+.hero .in { position: relative; z-index: 1; width: min(1080px, 100%); margin: 0 auto; padding: 0 16px 48px; }
+h1 { font-family: var(--display); font-weight: 700; font-size: clamp(3.4rem, 13vw, 7.5rem); letter-spacing: 0.16em; line-height: 0.95; margin: 0; text-shadow: 0 2px 24px rgba(0,0,0,0.45); }
+.tag { font-size: clamp(1.05rem, 2.6vw, 1.35rem); max-width: 34em; margin: 0.6rem 0 1.6rem; color: #fff3ea; text-shadow: 0 1px 12px rgba(0,0,0,0.6); }
+.ver { display: inline-block; font-family: var(--display); font-weight: 600; letter-spacing: 0.08em; font-size: 1.05rem; color: var(--oxide); background: rgba(21,17,15,0.7); border: 1px solid rgba(240,138,75,0.5); padding: 0.1rem 0.6rem; border-radius: 3px; vertical-align: middle; }
+.dl { display: inline-flex; align-items: center; gap: 0.8rem; background: var(--oxide); color: #1a0f0a; text-decoration: none; font-family: var(--display); font-weight: 700; font-size: 1.55rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.85rem 1.6rem; border-radius: 4px; box-shadow: 0 6px 28px rgba(240,138,75,0.35); }
+.dl:hover, .dl:focus-visible { background: #ffa166; outline: none; }
+.dl svg { width: 1.3em; height: 1.3em; flex: none; }
+.dl small { font-family: var(--body); font-weight: 500; font-size: 0.95rem; letter-spacing: 0; text-transform: none; opacity: 0.8; }
+.under { margin-top: 0.8rem; color: var(--dim); font-size: 0.98rem; }
+
+main { width: min(1080px, 100%); margin: 0 auto; padding: 0 16px 64px; }
+section { margin-top: 64px; }
+h2 { font-family: var(--display); font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; font-size: 1.9rem; margin: 0 0 1rem; }
+h2 span { color: var(--oxide); }
+.lead { color: var(--dim); max-width: 40em; margin: -0.4rem 0 1.4rem; }
+
+.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; counter-reset: s; }
+.steps li { background: var(--panel); border-top: 3px solid var(--oxide-deep); padding: 1.1rem 1.2rem 1.2rem; counter-increment: s; }
+.steps li::before { content: counter(s); display: block; font-family: var(--display); font-weight: 700; font-size: 2.4rem; line-height: 1; color: var(--oxide); margin-bottom: 0.4rem; }
+.steps li > b { display: block; font-size: 1.1rem; margin-bottom: 0.2rem; }
+.steps p b { color: var(--text); }
+.steps p { margin: 0; color: var(--dim); }
+code, kbd { font-family: ui-monospace, Consolas, monospace; font-size: 0.92em; background: var(--panel2); border: 1px solid var(--line); border-radius: 3px; padding: 0.05em 0.35em; color: var(--text); }
+
+.help { margin-top: 12px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 12px; }
+.help div { background: var(--panel); padding: 1rem 1.2rem; border-left: 3px solid var(--line); }
+.help div > b { display: block; margin-bottom: 0.15rem; }
+.help p b { color: var(--text); }
+.help p { margin: 0; color: var(--dim); }
+
+.two { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 24px; align-items: center; }
+.two p { margin: 0 0 0.8rem; }
+.two img { border-radius: 3px; }
+.pill { color: var(--ok); font-weight: 600; }
+
+.gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 10px; }
+.gallery figure { margin: 0; background: var(--panel); }
+.gallery img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.gallery figcaption { padding: 0.5rem 0.8rem 0.7rem; color: var(--dim); font-size: 0.95rem; }
+.gallery figcaption b { color: var(--text); font-weight: 600; }
+
+.keys { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 6px 24px; margin: 0; }
+.keys div { display: flex; justify-content: space-between; gap: 1rem; border-bottom: 1px solid var(--line); padding: 0.45rem 0; }
+.keys dt { color: var(--dim); }
+.keys dd { margin: 0; text-align: right; }
+
+.news { display: grid; gap: 10px; }
+.news article { background: var(--panel); padding: 1rem 1.2rem; }
+.news h3 { margin: 0 0 0.3rem; font-family: var(--display); font-weight: 600; letter-spacing: 0.06em; font-size: 1.3rem; }
+.news h3 small { font-family: var(--body); font-weight: 400; color: var(--dim); font-size: 0.9rem; letter-spacing: 0; margin-left: 0.5rem; }
+.news p { margin: 0; color: var(--dim); }
+
+footer { width: min(1080px, 100%); margin: 0 auto; padding: 24px 16px 40px; color: var(--dim); font-size: 0.92rem; border-top: 1px solid var(--line); }
+
+@media (max-width: 560px) {
+  body { font-size: 16px; }
+  .hero { min-height: 78vh; }
+  .dl { font-size: 1.25rem; padding: 0.8rem 1.1rem; width: 100%; justify-content: center; flex-wrap: wrap; }
+  .keys div { flex-direction: column; gap: 0; }
+  .keys dd { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="in">
+    <h1>RÖDMARK</h1>
+    <p class="tag">Raketen har kraschat på en främmande skogsplanet. Fäll träd, bryt malm och bygg en fabrik som arbetar åt dig, ensam eller ihop i hemnätet. Luften går inte att andas, så håll koll på syret.</p>
+    <a class="dl" id="dl" href="https://github.com/8bitcat/rodmark/releases/latest">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m6 10 6 6 6-6"/><path d="M4 20h16"/></svg>
+      <span id="dl-text">Ladda ner</span>
+      <small id="dl-size"></small>
+    </a>
+    <p class="under">Senaste versionen: <span class="ver" id="ver">…</span> · Windows 10/11 · uppdaterar sig själv när du startar</p>
+  </div>
+</header>
+
+<main>
+  <section id="igang">
+    <h2>Så kommer du <span>igång</span></h2>
+    <ol class="steps">
+      <li><b>Ladda ner</b><p>Tryck på den orange knappen. Filen heter <code>RODMARK-…-win64.zip</code> och är ungefär en halv gigabyte.</p></li>
+      <li><b>Packa upp</b><p>Högerklicka på zip-filen och välj <b>Extrahera alla…</b>. Lägg mappen där du vill ha spelet, till exempel på skrivbordet.</p></li>
+      <li><b>Starta</b><p>Öppna mappen <code>Windows</code> och dubbelklicka på <b>RODMARK.bat</b>. Starta alltid med den filen, så får du alltid senaste versionen.</p></li>
+    </ol>
+    <div class="help">
+      <div><b>Om Windows säger «Windows skyddade datorn»</b><p>Tryck på <b>Mer information</b> och sedan <b>Kör ändå</b>. Spelet är inte signerat, därför frågar Windows.</p></div>
+      <div><b>Om brandväggen frågar</b><p>Tillåt <b>privata nätverk</b>. Annars hittar ni inte varandra när ni spelar ihop.</p></div>
+    </div>
+  </section>
+
+  <section id="uppdatering" class="two">
+    <div>
+      <h2>Alltid <span>senaste</span> versionen</h2>
+      <p>Varje gång du startar med <b>RODMARK.bat</b> kollar spelet om det finns en nyare version. Finns det en hämtar den bara de filer som har ändrats och startar sedan spelet. Du behöver aldrig ladda ner zip-filen igen.</p>
+      <p>Versionen står stort bredvid namnet i huvudmenyn och nere till höger när du spelar. Ni som spelar ihop ska ha <span class="pill">samma version</span>, och det blir det automatiskt om alla startar med RODMARK.bat.</p>
+    </div>
+    <img src="bilder/meny.jpg" alt="Huvudmenyn i RÖDMARK med versionen 0.2.0 bredvid namnet" loading="lazy" width="1280" height="720">
+  </section>
+
+  <section id="ihop" class="two">
+    <img src="bilder/ihop.jpg" alt="Två astronauter bredvid varandra på planetens röda jord" loading="lazy" width="1280" height="720">
+    <div>
+      <h2>Spela <span>ihop</span></h2>
+      <p>1 till 4 spelare i samma hemnät. Den som är värd trycker <b>VAR VÄRD I HEMNÄTET</b>. De andra ser spelet under <b>SPEL I HEMNÄTET</b> och går med, eller skriver värdens IP-adress, som står på värdens knapp.</p>
+      <p>Alla har ett eget förråd. Skriv <b>samma namn</b> varje gång, så har du kvar dina saker och står där du slutade nästa gång ni spelar.</p>
+    </div>
+  </section>
+
+  <section id="bilder">
+    <h2>Från <span>planeten</span></h2>
+    <div class="gallery">
+      <figure><img src="bilder/skog.jpg" alt="Förstaperson i skogen med yxan i handen" loading="lazy" width="1280" height="720"><figcaption><b>Skogen.</b> Tillverka en yxa först. Hackan biter inte på träden.</figcaption></figure>
+      <figure><img src="bilder/fabriknara.jpg" alt="Stenugn, transportband, gripare och borr på ett järnfält" loading="lazy" width="1280" height="720"><figcaption><b>Fabriken.</b> Borrar, ugnar, band och gripare som arbetar själva.</figcaption></figure>
+      <figure><img src="bilder/ugn.jpg" alt="Stenugnens fönster med bränsle, malm och förrådet" loading="lazy" width="1280" height="720"><figcaption><b>Ugnen.</b> Lägg i malm och trä eller kol, så smälter den plåt.</figcaption></figure>
+      <figure><img src="bilder/natt.jpg" alt="Natt med Vintergatan över skogen" loading="lazy" width="1280" height="720"><figcaption><b>Natten.</b> Ett dygn är 20 minuter. Sov i landaren.</figcaption></figure>
+    </div>
+  </section>
+
+  <section id="styrning">
+    <h2><span>Styrning</span></h2>
+    <dl class="keys">
+      <div><dt>Gå</dt><dd><kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd></dd></div>
+      <div><dt>Titta</dt><dd>musen</dd></div>
+      <div><dt>Hoppa</dt><dd><kbd>Mellanslag</kbd></dd></div>
+      <div><dt>Springa</dt><dd><kbd>Shift</kbd></dd></div>
+      <div><dt>Hacka, fälla träd</dt><dd>vänster musknapp</dd></div>
+      <div><dt>Förrådet och tillverka</dt><dd><kbd>Tab</kbd></dd></div>
+      <div><dt>Använda (ugn, kista, landaren)</dt><dd><kbd>E</kbd></dd></div>
+      <div><dt>Bygga</dt><dd><kbd>B</kbd>, <kbd>1</kbd>–<kbd>0</kbd></dd></div>
+      <div><dt>Vrida</dt><dd><kbd>R</kbd></dd></div>
+      <div><dt>Riva</dt><dd><kbd>X</kbd></dd></div>
+      <div><dt>Lampa</dt><dd><kbd>F</kbd></dd></div>
+      <div><dt>Uppdragen</dt><dd><kbd>J</kbd></dd></div>
+      <div><dt>Paus</dt><dd><kbd>Esc</kbd></dd></div>
+    </dl>
+  </section>
+
+  <section id="nytt">
+    <h2>Vad är <span>nytt</span></h2>
+    <div class="news" id="news">
+      <article><h3>0.2.0 <small>«Första lågan»</small></h3><p>Yxa, förråd med 40 fack, handtillverkning, stenugn, brännarborr, kistor, transportband och gripare. Spela själv eller 1–4 i hemnätet.</p></article>
+    </div>
+  </section>
+</main>
+
+<footer>RÖDMARK görs av 8bitcat i Unreal Engine. Alla versioner finns på <a href="https://github.com/8bitcat/rodmark/releases">github.com/8bitcat/rodmark</a>.</footer>
+
+<script>
+// den senaste versionen direkt från GitHub: knappen pekar på zip-filen, versionen och nyheterna fylls i
+(function () {
+  var esc = function (s) { return String(s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); };
+  var first = function (body) {
+    var p = String(body || "").split(/\r?\n\r?\n/)[0] || "";
+    return p.replace(/\*\*/g, "").replace(/^RÖDMARK\s+[\d.]+\s*/, "").trim();
+  };
+  fetch("https://api.github.com/repos/8bitcat/rodmark/releases?per_page=6")
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function (list) {
+      list = list.filter(function (r) { return !r.draft && !r.prerelease; });
+      if (!list.length) return;
+      var latest = list[0];
+      var ver = latest.tag_name.replace(/^v/, "");
+      var zip = (latest.assets || []).filter(function (a) { return /\.zip$/i.test(a.name); })[0];
+      document.getElementById("ver").textContent = ver;
+      document.getElementById("dl-text").textContent = "Ladda ner " + ver;
+      if (zip) {
+        document.getElementById("dl").href = zip.browser_download_url;
+        document.getElementById("dl-size").textContent = Math.round(zip.size / 1e6) + " MB";
+      }
+      var html = list.map(function (r) {
+        var d = new Date(r.published_at).toLocaleDateString("sv-SE", { day: "numeric", month: "long", year: "numeric" });
+        var m = first(r.body).match(/^«([^»]+)»:?\s*/);
+        var title = m ? m[1] : "";
+        var text = m ? first(r.body).slice(m[0].length) : first(r.body);
+        text = text.charAt(0).toUpperCase() + text.slice(1);
+        return "<article><h3>" + esc(r.tag_name.replace(/^v/, "")) + (title ? " <small>«" + esc(title) + "»</small>" : "") + " <small>" + esc(d) + "</small></h3><p>" + esc(text) + "</p></article>";
+      }).join("");
+      if (html) document.getElementById("news").innerHTML = html;
+    })
+    .catch(function () {
+      document.getElementById("ver").textContent = "se GitHub";
+      document.getElementById("dl-text").textContent = "Ladda ner senaste";
+    });
+})();
+</script>
+</body>
+</html>
