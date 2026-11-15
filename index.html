@@ -99,13 +99,13 @@ footer { width: min(1080px, 100%); margin: 0 auto; padding: 24px 16px 40px; colo
 <header class="hero">
   <div class="in">
     <h1>RÖDMARK</h1>
-    <p class="tag">Raketen har kraschat på en främmande skogsplanet. Fäll träd, bryt malm och bygg en fabrik som arbetar åt dig, ensam eller ihop i hemnätet. Luften går inte att andas, så håll koll på syret.</p>
+    <p class="tag">Raketen har kraschat på en främmande skogsplanet. Fäll träd, bryt malm och bygg en fabrik som arbetar åt dig, ensam eller ihop med vänner, var de än sitter. Luften går inte att andas, så håll koll på syret.</p>
     <a class="dl" id="dl" href="https://github.com/8bitcat/rodmark/releases/latest">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m6 10 6 6 6-6"/><path d="M4 20h16"/></svg>
       <span id="dl-text">Ladda ner</span>
       <small id="dl-size"></small>
     </a>
-    <p class="under">Senaste versionen: <span class="ver" id="ver">…</span> · Windows 10/11 · uppdaterar sig själv när du startar</p>
+    <p class="under">Senaste versionen: <span class="ver" id="ver">…</span> · Windows 10/11 · uppdaterar sig själv</p>
   </div>
 </header>
 
@@ -115,19 +115,19 @@ footer { width: min(1080px, 100%); margin: 0 auto; padding: 24px 16px 40px; colo
     <ol class="steps">
       <li><b>Ladda ner</b><p>Tryck på den orange knappen. Filen heter <code>RODMARK-…-win64.zip</code> och är ungefär en halv gigabyte.</p></li>
       <li><b>Packa upp</b><p>Högerklicka på zip-filen och välj <b>Extrahera alla…</b>. Lägg mappen där du vill ha spelet, till exempel på skrivbordet.</p></li>
-      <li><b>Starta</b><p>Öppna mappen <code>Windows</code> och dubbelklicka på <b>RODMARK.bat</b>. Starta alltid med den filen, så får du alltid senaste versionen.</p></li>
+      <li><b>Starta</b><p>Öppna mappen <code>Windows</code> och dubbelklicka på <b>Rodmark.exe</b>. Vill du ha spelet på skrivbordet: högerklicka på filen och välj <b>Skicka till → Skrivbord (skapa genväg)</b>.</p></li>
     </ol>
     <div class="help">
       <div><b>Om Windows säger «Windows skyddade datorn»</b><p>Tryck på <b>Mer information</b> och sedan <b>Kör ändå</b>. Spelet är inte signerat, därför frågar Windows.</p></div>
-      <div><b>Första starten: «Vill du tillåta …?»</b><p>Startfilen öppnar brandväggen för hemnätet en gång, så att ni hittar varandra. Windows frågar om lov: tryck <b>Ja</b>. Frågar Windows igen när spelet startar: välj <b>Tillåt</b>.</p></div>
+      <div><b>Första starten: «Vill du tillåta …?»</b><p>Spelet öppnar brandväggen en gång, så att datorer i samma hus hittar varandra. Windows frågar om lov: tryck <b>Ja</b>. Frågar Windows igen: välj <b>Tillåt</b>. Över internet fungerar spelet även om du säger nej.</p></div>
     </div>
   </section>
 
   <section id="uppdatering" class="two">
     <div>
       <h2>Alltid <span>senaste</span> versionen</h2>
-      <p>Varje gång du startar med <b>RODMARK.bat</b> kollar spelet om det finns en nyare version. Finns det en hämtar den bara de filer som har ändrats och startar sedan spelet. Du behöver aldrig ladda ner zip-filen igen.</p>
-      <p>Versionen står stort bredvid namnet i huvudmenyn och nere till höger när du spelar. Ni som spelar ihop ska ha <span class="pill">samma version</span>, och det blir det automatiskt om alla startar med RODMARK.bat.</p>
+      <p>När du startar spelet kollar det om det finns en nyare version. Finns det en hämtas bara de filer som har ändrats, medan du är i menyn eller spelar, och menyn visar hur långt det har kommit. När den är hämtad trycker du <b>UPPDATERA NU</b>, så startar spelet om med den nya versionen. Annars läggs den in när du avslutar. Du behöver aldrig ladda ner zip-filen igen.</p>
+      <p>Versionen står stort bredvid namnet i huvudmenyn och nere till höger när du spelar. Ni som spelar ihop ska ha <span class="pill">samma version</span>, och det blir det automatiskt när alla har uppdaterat.</p>
     </div>
     <img src="bilder/meny.jpg" alt="Huvudmenyn i RÖDMARK med versionen 0.2.0 bredvid namnet" loading="lazy" width="1280" height="720">
   </section>
@@ -136,10 +136,9 @@ footer { width: min(1080px, 100%); margin: 0 auto; padding: 24px 16px 40px; colo
     <img src="bilder/ihop.jpg" alt="Två astronauter bredvid varandra på planetens röda jord" loading="lazy" width="1280" height="720">
     <div>
       <h2>Spela <span>ihop</span></h2>
-      <p>1 till 4 spelare i samma hemnät. Den ena startar ett spel: <b>NYTT SPEL</b>, <b>FORTSÄTT</b> eller <b>VAR VÄRD I HEMNÄTET</b> (alla går att gå med i). Efter några sekunder syns spelet hos de andra under <b>SPEL I HEMNÄTET</b>, och de trycker <b>GÅ MED</b>.</p>
-      <p>Syns det inte? Skriv värdens IP-adress (den står på värdens knapp <b>VAR VÄRD I HEMNÄTET</b>) i rutan <b>Värdens IP</b> och tryck <b>GÅ MED</b>. Båda datorerna måste vara på samma hemnät och ha samma version.</p>
-      <p><b>Från olika hus:</b> ingenting att installera. Den ena startar ett spel, och efter några sekunder syns det hos den andra under <b>SPEL I HEMNÄTET</b> med texten «över internet». Tryck <b>GÅ MED</b>: det tar några sekunder att koppla upp. (Spelen hittar varandra genom Epic Online Services, gratis och utan konto.)</p>
-      <p>Alla har ett eget förråd. Skriv <b>samma namn</b> varje gång, så har du kvar dina saker och står där du slutade nästa gång ni spelar.</p>
+      <p>1 till 4 spelare, i samma hus eller var som helst. Den ena startar ett spel med <b>NYTT SPEL</b> eller <b>FORTSÄTT</b> och blir värd. Efter några sekunder syns spelet hos de andra under <b>SPELA MED VÄNNER</b>, och de trycker på det. Ingen IP-adress behövs, och ingenting extra att installera. (Spelen hittar varandra genom Epic Online Services, gratis och utan konto.)</p>
+      <p>Syns det inte? Kolla att ni har samma version. I samma hus finns en reserv: skriv värdens IP-adress (den står i värdens meny vid <b>GÅ MED MED IP</b>) i rutan <b>Värdens IP</b> och tryck <b>GÅ MED MED IP</b>.</p>
+            <p>Alla har ett eget förråd. Skriv <b>samma namn</b> varje gång, så har du kvar dina saker och står där du slutade nästa gång ni spelar.</p>
     </div>
   </section>
 
